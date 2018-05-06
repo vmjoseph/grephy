@@ -1,4 +1,6 @@
-public class DFA {
-    public DFA(){
+public class DFA
+{
+    public DFA()
+    {
     }
 }

@@ -9,7 +9,8 @@ import java.util.regex.Pattern;
 
 public class  Main {
 
-    public static void intro(){
+    public static void intro()
+    {
 
         System.out.println("Welcome to Grephy, a convertor for regular expressions to NFA/DFA Diagrams");
         System.out.println("First, enter your REGEX pattern:");
@@ -18,13 +19,33 @@ public class  Main {
 
         System.out.println("Type in your command");
         String rollno=sc.nextLine().toLowerCase();
-        Alphabet alphabet = new Alphabet(rollno);
+
+        DFA dfa = new DFA();
+        if(isNFA(rollno)){
+            NFA nfa = new NFA(rollno);
+            Tuple tuple = new Tuple(nfa);
+            nfa.setNfaTuple(tuple);
+            System.out.println(nfa.nfaTuple);
+
+        }
+
         sc.close();
     }
 
+    public static boolean isNFA(String s)
+    {
+        if(s.contains("-n")){
+            return true;
+        }else if(s.contains("-d")){
+            return false;
+        }else{
+            return false;
+        }
+    }
 
 
-    public static void main(String[] args){
+    public static void main(String[] args)
+    {
 
         intro();
 
