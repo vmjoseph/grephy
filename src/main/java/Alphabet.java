@@ -5,8 +5,7 @@ import java.util.regex.Pattern;
 public class Alphabet {
     private ArrayList<String> alphabet = new ArrayList<>();
     // string to look for the main types of pattern matching
-    final String regex = "([a-z]*\\*)|([a-z]*)|([a-z]*\\s*\\+\\s*[a-z]*)|(\\([a-z]*\\s*\\+\\s*[a-z]*\\)\\*)|([a-z]*\\s*\\+\\s*\\ε)";
-
+    final String regex = "([a-z]*\\*)|([a-z]*)|([a-z]*\\s*\\+\\s*[a-z]*)|(\\([a-z]*\\s*\\+\\s*[a-z]*\\)\\*)|([a-z]*\\s*\\+\\s*\\ε)|(\\([a-z]*\\s*\\+\\s[a-z]*\\)\\([a-z]*\\s*\\+\\s[a-z]*\\))";
     public Alphabet(String input){
         findAlphabet(input);
     }
@@ -25,8 +24,14 @@ public class Alphabet {
 
         while (matcher.find()) {
             acceptedAlphabet.add(matcher.group(0));
+//            System.out.println(matcher.group(0));
+            System.out.println("Full match: " + matcher.group(0));
+            for (int i = 1; i <= matcher.groupCount(); i++) {
+                System.out.println("Group " + i + ": " + matcher.group(i));
+            }
         }
         for(String s : acceptedAlphabet){
+
             if(s.length() > 0 && !s.contains("*")) {
                 fullAcceptedAlphabet.add(s);
             }
