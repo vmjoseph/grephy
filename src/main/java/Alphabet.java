@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class Alphabet {
     private ArrayList<String> alphabet = new ArrayList<>();
     // string to look for the main types of pattern matching
-    final String regex = "([a-z]*\\*)|([a-z]*)|([a-z]*\\s*\\+\\s*[a-z]*)|(\\([a-z]*\\s*\\+\\s*[a-z]*\\)\\*)|([a-z]*\\s*\\+\\s*\\ε)|(\\([a-z]*\\s*\\+\\s[a-z]*\\)\\([a-z]*\\s*\\+\\s[a-z]*\\))";
+    final String regex = "([a-z]*\\*)|([a-z]*)|([a-z]*\\s*\\+\\s*[a-z]*)|(\\([a-z]*\\s*\\+\\s*[a-z]*\\)\\*)|([a-z]*\\s*\\\\+\\s*\\ε)|(\\([a-z]*\\s*\\\\+\\s[a-z]*\\)\\([a-z]*\\s*\\+\\s[a-z]*\\))|([a-z]*\\*)|([0-1]*)";
     public Alphabet(String input){
         findAlphabet(input);
     }
@@ -15,7 +15,7 @@ public class Alphabet {
      * @param input user input
      * @return list of strings (without * + or () )
      */
-    public ArrayList<String> findAlphabet(String input) {
+    private ArrayList<String> findAlphabet(String input) {
 
         ArrayList<String> acceptedAlphabet = new ArrayList<>();
         ArrayList<String> fullAcceptedAlphabet = new ArrayList<>();
@@ -32,7 +32,7 @@ public class Alphabet {
         }
         for(String s : acceptedAlphabet){
 
-            if(s.length() > 0 && !s.contains("*")) {
+            if(s.length() > 0) {
                 fullAcceptedAlphabet.add(s);
             }
         }
