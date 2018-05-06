@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/grephy-vjoseph.iml" filepath="$PROJECT_DIR$/.idea/modules/grephy-vjoseph.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/grephy-vjoseph_main.iml" filepath="$PROJECT_DIR$/.idea/modules/grephy-vjoseph_main.iml" group="grephy-vjoseph" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/grephy-vjoseph_test.iml" filepath="$PROJECT_DIR$/.idea/modules/grephy-vjoseph_test.iml" group="grephy-vjoseph" />
+    </modules>
+  </component>
+</project>
