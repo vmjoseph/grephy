@@ -1,5 +1,8 @@
+import sun.rmi.runtime.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 public class Tuple
@@ -14,6 +17,8 @@ public class Tuple
     private DFA dfa;
     private String[] inputArray;
     private String input;
+    private int stateCounter = 0;
+
 
     public ArrayList tuple = new ArrayList();
 
@@ -27,8 +32,14 @@ public class Tuple
         tuple.add(startState);
         System.out.println("Symbols: " +symbols);
         System.out.println("Start State: " +startState);
+        createStates();
 
     }
+
+    public int getStateCounter() {
+        return stateCounter;
+    }
+
     public void setSplits(){
         input = nfa.getInput().replace("-n ","");
         inputArray= input.split("");
@@ -41,6 +52,28 @@ public class Tuple
             startState = inputArray[i+1];
             i++;
         }
+
+    }
+    public void createStates(){
+        System.out.println("State Search");
+    System.out.println(symbols);
+
+    for(String s : symbols){
+        if(s.length() > 1){
+            String depth = s;
+            for( String l : depth.split("")){
+                System.out.println(l);
+                states.add(new States(stateCounter,s));
+                stateCounter++;
+            }
+        }else{
+
+            System.out.println(s);
+            states.add(new States(stateCounter));
+            stateCounter++;
+        }
+        System.out.println(states);
+    }
 
     }
     public void setAcceptStates(){

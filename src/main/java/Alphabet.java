@@ -58,7 +58,7 @@ public class Alphabet
         }
 
         for(String s : acceptedAlphabet){
-            if(s.length() > 0) {
+            if(s.length() > 0 && !s.equals("n") && !s.equals("d")) {
                 fullAcceptedAlphabet.add(s);
             }
         }

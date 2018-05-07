@@ -2,31 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be03014f-7347-42e0-89de-f2f201a52111" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/NFADiagram.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/docs/Alphabet.html" afterPath="$PROJECT_DIR$/docs/Alphabet.html" />
-      <change beforePath="$PROJECT_DIR$/docs/Main.html" afterPath="$PROJECT_DIR$/docs/Main.html" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses-frame.html" afterPath="$PROJECT_DIR$/docs/allclasses-frame.html" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses-noframe.html" afterPath="$PROJECT_DIR$/docs/allclasses-noframe.html" />
-      <change beforePath="$PROJECT_DIR$/docs/constant-values.html" afterPath="$PROJECT_DIR$/docs/constant-values.html" />
-      <change beforePath="$PROJECT_DIR$/docs/deprecated-list.html" afterPath="$PROJECT_DIR$/docs/deprecated-list.html" />
-      <change beforePath="$PROJECT_DIR$/docs/help-doc.html" afterPath="$PROJECT_DIR$/docs/help-doc.html" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-1.html" afterPath="$PROJECT_DIR$/docs/index-files/index-1.html" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-2.html" afterPath="$PROJECT_DIR$/docs/index-files/index-2.html" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-3.html" afterPath="$PROJECT_DIR$/docs/index-files/index-3.html" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-4.html" afterPath="$PROJECT_DIR$/docs/index-files/index-4.html" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-5.html" afterPath="$PROJECT_DIR$/docs/index-files/index-5.html" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-6.html" afterPath="$PROJECT_DIR$/docs/index-files/index-6.html" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" afterPath="$PROJECT_DIR$/docs/index.html" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-tree.html" afterPath="$PROJECT_DIR$/docs/overview-tree.html" />
-      <change beforePath="$PROJECT_DIR$/docs/package-frame.html" afterPath="$PROJECT_DIR$/docs/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/docs/package-summary.html" afterPath="$PROJECT_DIR$/docs/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/docs/package-tree.html" afterPath="$PROJECT_DIR$/docs/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Alphabet.class" afterPath="$PROJECT_DIR$/out/production/classes/Alphabet.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Main.class" afterPath="$PROJECT_DIR$/out/production/classes/Main.class" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Alphabet.java" afterPath="$PROJECT_DIR$/src/main/java/Alphabet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DFA.java" afterPath="$PROJECT_DIR$/src/main/java/DFA.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/NFA.java" afterPath="$PROJECT_DIR$/src/main/java/NFA.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/States.java" afterPath="$PROJECT_DIR$/src/main/java/States.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Tuple.java" afterPath="$PROJECT_DIR$/src/main/java/Tuple.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -102,7 +81,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
+            <state relative-caret-position="320">
               <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -114,8 +93,8 @@
       <file leaf-file-name="Alphabet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Alphabet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="633">
+              <caret line="60" column="63" lean-forward="false" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#676#677#0" expanded="true" />
@@ -128,8 +107,8 @@
       <file leaf-file-name="NFA.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/NFA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+            <state relative-caret-position="124">
+              <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="25" />
               <folding>
                 <element signature="e#354#355#0" expanded="true" />
                 <element signature="e#389#390#0" expanded="true" />
@@ -155,13 +134,15 @@
       <file leaf-file-name="Tuple.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Tuple.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="28" />
+            <state relative-caret-position="465">
+              <caret line="65" column="51" lean-forward="false" selection-start-line="65" selection-start-column="51" selection-end-line="65" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#153#161#0" expanded="true" />
-                <element signature="e#1383#1384#0" expanded="true" />
-                <element signature="e#1475#1476#0" expanded="true" />
+                <element signature="e#211#219#0" expanded="true" />
+                <element signature="e#1059#1060#0" expanded="true" />
+                <element signature="e#1094#1095#0" expanded="true" />
+                <element signature="e#2144#2145#0" expanded="true" />
+                <element signature="e#2236#2237#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,9 +151,12 @@
       <file leaf-file-name="States.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/States.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="434">
+              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding>
+                <element signature="e#697#698#0" expanded="true" />
+                <element signature="e#760#761#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -414,10 +398,11 @@
       <list>
         <option value="$PROJECT_DIR$/.idea/src/main.java" />
         <option value="$PROJECT_DIR$/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Alphabet.java" />
         <option value="$PROJECT_DIR$/src/main/java/DFA.java" />
         <option value="$PROJECT_DIR$/src/main/java/NFA.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/NFADiagram.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Alphabet.java" />
         <option value="$PROJECT_DIR$/src/main/java/Tuple.java" />
         <option value="$PROJECT_DIR$/src/main/java/States.java" />
       </list>
@@ -647,12 +632,12 @@
       <updated>1525572977345</updated>
       <workItem from="1525572982740" duration="1917000" />
       <workItem from="1525579557919" duration="11844000" />
-      <workItem from="1525617546763" duration="16187000" />
+      <workItem from="1525617546763" duration="19439000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29948000" />
+    <option name="totallyTimeSpent" value="33200000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="110" y="-11" width="2781" height="1642" extended-state="6" />
@@ -743,9 +728,11 @@
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#153#161#0" expanded="true" />
-            <element signature="e#1383#1384#0" expanded="true" />
-            <element signature="e#1475#1476#0" expanded="true" />
+            <element signature="e#211#219#0" expanded="true" />
+            <element signature="e#1059#1060#0" expanded="true" />
+            <element signature="e#1094#1095#0" expanded="true" />
+            <element signature="e#2144#2145#0" expanded="true" />
+            <element signature="e#2236#2237#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -754,7 +741,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -803,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Alphabet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="633">
+          <caret line="60" column="63" lean-forward="false" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#676#677#0" expanded="true" />
@@ -813,10 +803,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/NFADiagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/NFA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        <state relative-caret-position="124">
+          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="25" />
           <folding>
             <element signature="e#354#355#0" expanded="true" />
             <element signature="e#389#390#0" expanded="true" />
@@ -828,34 +836,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Tuple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="28" />
+        <state relative-caret-position="465">
+          <caret line="65" column="51" lean-forward="false" selection-start-line="65" selection-start-column="51" selection-end-line="65" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#153#161#0" expanded="true" />
-            <element signature="e#1383#1384#0" expanded="true" />
-            <element signature="e#1475#1476#0" expanded="true" />
+            <element signature="e#211#219#0" expanded="true" />
+            <element signature="e#1059#1060#0" expanded="true" />
+            <element signature="e#1094#1095#0" expanded="true" />
+            <element signature="e#2144#2145#0" expanded="true" />
+            <element signature="e#2236#2237#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/States.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="434">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
