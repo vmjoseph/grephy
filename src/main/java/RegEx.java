@@ -10,7 +10,7 @@ public class RegEx {
     public Map<Integer, String> exploded;
     public ArrayList<States> states;
     public HashMap<String, String> finalStates= new HashMap<>();
-    public  int p = 0;
+    public  int o;
     private enum types{
         ab, abAndC, baKleen,  aAndBKleen,abAndE, emptySet
     }
@@ -37,8 +37,8 @@ public class RegEx {
     }
 
     public Map<Integer, String> evaluate(){
-        System.out.println("Input: ");
-        System.out.println(input);
+//        System.out.println("Input: ");
+//        System.out.println(input);
         int i = 0;
         Map<Integer, String> groups = new HashMap<>();
 
@@ -67,12 +67,12 @@ public class RegEx {
     }
 
     private void chooseEvaluation() {
-        System.out.println("EXPLODDED:");
-        System.out.println(exploded);
+//        System.out.println("EXPLODDED:");
+//        System.out.println(exploded);
         ArrayList<String> stateNames = new ArrayList<>();
-        int o = 0;
+        o = 0;
         for(int i = 0; i < exploded.size(); i++){
-//            System.out.println(i+ " "+ exploded.get(i));
+            System.out.println(i+ " "+ exploded.get(i));
 //            stateNames.add("q"+p+": "+exploded.get(i));
 //            p++;
             if(exploded.get(i).contains("+")){
@@ -82,36 +82,49 @@ public class RegEx {
             }else if (exploded.get(i).contains("*") && exploded.get(i).contains("+")){
                 computeKleenePlus(exploded.get(i),stateNames,o);
             }else{
-//                System.out.println("Reg compute");
-//                System.out.println(exploded.get(i));
-                o++;
-                String string = ("q"+(o+1)+" -> "+"q"+(o+1)+"[label = "+exploded.get(i)+"];");
-                finalStates.put(string,string);
-                stateNames.add("q"+o+": "+exploded.get(i));
+                o += 1;
+                System.out.println("Reg compute");
+                System.out.println(exploded.get(i));
+                if(exploded.get(i).length() < 1) {
+                    String string = ("q" + (o + 1) + " -> " + "q" + (o + 1) + "[label = " + exploded.get(i) + "];");
+                    finalStates.put(string, "q" + (o + 1));
+                    stateNames.add("q" + o + ": " + exploded.get(i));
+                }else {
+                    String[] explodeAgain = exploded.get(i).split("");
+                    for(String s: explodeAgain){
+                        System.out.println(s);
+                        String string = ("q" + (o-1 ) + " -> " + "q" + (o) + "[label = " + s + "];");
+                        finalStates.put(string, "q" + (o));
+                        stateNames.add("q" + (o+1) + ": " + exploded.get(i));
+
+                        o+=1;
+                    }
+                }
             }
         }
+
 //        for ( String key : finalStates.keySet() ) {
 //            System.out.println( key );
 //        }
     }
 
     private void computePlus(String s, ArrayList<String> stateNames, int o){
-        o++;
+        o+=1;
 //        System.out.println("Plus Compute");
 //        System.out.println(s);
         String[] splitPlus = s.split("\\+");
         if(splitPlus.length>1){
             String string = ("q"+(0)+ " -> " +"q"+(o-1)+"[label = "+splitPlus[0]+"];");
-            finalStates.put(string,string);
+            finalStates.put(string,"q"+(0));
             String strings = ("q"+(0)+ " -> " +"q"+(o)+"[label = "+splitPlus[1]+"];");
-            finalStates.put(strings,strings);
+            finalStates.put(strings,"q"+(0));
         }
     }
     private void computeKleene(String s, ArrayList<String> stateNames, int o){
 
-        o++;
-//        System.out.println("Kleene Compute");
-//        System.out.println(s);
+        o+=1;
+        System.out.println("Kleene Compute");
+        System.out.println(s);
         String[] strings = s.split("(?<=\\*)");
         for(String str: strings){
             String tempLast ="";
@@ -124,22 +137,22 @@ public class RegEx {
                     tempRealLast=  strs;
                 }else{
                     String string = ("q"+(o)+ " -> " +"q"+(o-1) + "[label = "+tempRealLast+"];");
-                    finalStates.put(string,string);
+                    finalStates.put(string,"q"+(o));
                     String stringss = ("q"+(o-1)+ " -> " +"q"+(o) + "[label = "+tempRealLast+"];");
-                    finalStates.put(stringss,stringss);
+                    finalStates.put(stringss,"q"+(o-1));
                 }
 
             }
 //            System.out.println("q"+0+ "->" +"q"+(o)+" [label = "+splitPlus[0]+"];");
 //            System.out.println("q"+0+ "->" +"q"+(o)+" [label = "+splitPlus[1]+"];");
-        o++;
+        o+=1;
         }
 
     }
     private void computeKleenePlus(String s, ArrayList<String> stateNames, int o){
-        o++;
-        System.out.println("Kleene Plus Compute");
-        System.out.println(s);
+        o+=1;
+//        System.out.println("Kleene Plus Compute");
+//        System.out.println(s);
 
     }
 

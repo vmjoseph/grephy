@@ -20,12 +20,15 @@ public class  Main {
         System.out.println("Type in your command");
         String rollno=sc.nextLine().toLowerCase();
 
-        DFA dfa = new DFA();
+        DFA dfa;
         if(isNFA(rollno)){
             NFA nfa = new NFA (rollno);
             Tuple tuple = new Tuple(nfa);
             nfa.setNfaTuple(tuple);
-            System.out.println(nfa.nfaTuple);
+            dfa = new DFA(nfa);
+            NFADiagram nfaDiagram = new NFADiagram(tuple.getStates(),tuple.getAcceptStates());
+            System.out.println(nfaDiagram);
+            System.out.println(tuple);
 
         }
 

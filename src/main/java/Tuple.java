@@ -1,7 +1,5 @@
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Tuple
 {
@@ -16,6 +14,7 @@ public class Tuple
     private String[] inputArray;
     private String input;
     private int stateCounter = 0;
+    ArrayList<String> stateNames = new ArrayList<>();
     RegEx regEx;
 
     public ArrayList tuple = new ArrayList();
@@ -36,6 +35,9 @@ public class Tuple
         regEx = new RegEx(input);
         setAcceptStates();
         createStates();
+        for(int i = 0; i < regEx.o; i++){
+            stateNames.add("q"+i);
+        }
 
 
     }
@@ -46,6 +48,10 @@ public class Tuple
      */
     public int getStateCounter() {
         return stateCounter;
+    }
+
+    public ArrayList<String> getAcceptStates() {
+        return acceptStates;
     }
 
     /**
@@ -78,15 +84,17 @@ public class Tuple
         }
     }
     public void setAcceptStates(){
-        int b = inputArray.length -1;
-        String tempEnd = null;
-        for(int i = inputArray.length - 1 ; i >= 0 ; i--){
-            if(!inputArray[i].equals(")") && !inputArray[i].equals("*")) {
-               tempEnd = inputArray[i];
-                break;
+        System.out.println("entries");
+        ArrayList<String> acceptingStates=  new ArrayList<>();
+        for (Map.Entry<String, String> entry: regEx.finalStates.entrySet()){
+            if(!acceptingStates.contains(entry.getValue())){
+                acceptingStates.add(entry.getValue());
             }
         }
-        acceptStates.add(tempEnd);
+        Collections.sort(acceptingStates);
+        System.out.println(acceptingStates);
+//        States.add(tempEnd);
+        this.acceptStates = acceptingStates;
     }
 
     public Tuple(DFA dfa){
@@ -95,8 +103,13 @@ public class Tuple
     private void tupleNFA(String string){
 
     }
+
+    public ArrayList<String> getStates() {
+        return states;
+    }
+
     public String toString() {
-        return "states: "+ "" + " alphabet: "+symbols + " start state: "+ startState + " accepting states: "+acceptStates + " states : "+states;
+        return "states: "+ acceptStates + " alphabet: "+symbols + " start state: "+ startState + " accepting states: "+acceptStates.get(acceptStates.size() -1 ) + " states : "+states;
     }
 
 }

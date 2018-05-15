@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -65,8 +66,17 @@ public class Alphabet
         }
 
 //        System.out.println("Alphabet accepted: \n"+fullAcceptedAlphabet);
-        alphabet = fullAcceptedAlphabet;
-        return fullAcceptedAlphabet;
+        ArrayList <String> uniqueAlphabet = new ArrayList<>();
+        for(int i = 0; i < fullAcceptedAlphabet.size(); i++){
+            for(String s: fullAcceptedAlphabet.get(i).split("")){
+               if(!s.contains("+") && !uniqueAlphabet.contains(s)){
+                   uniqueAlphabet.add(s);
+//                   System.out.println(s);
+               }
+            }
+        }
+        alphabet = uniqueAlphabet;
+        return uniqueAlphabet;
 
     }
 
