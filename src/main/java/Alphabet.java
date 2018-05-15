@@ -4,6 +4,7 @@ import java.util.regex.Pattern;
 
 public class Alphabet
 {
+    private final Helpers helpers;
     private ArrayList<String> alphabet = new ArrayList<>();
     // string to look for the main types of pattern matching
     final String regex = "([a-z]*\\*)|([a-z]*)|([a-z]*\\s*\\+\\s*[a-z]*)|(\\([a-z]*\\s*\\+\\s*[a-z]*\\)\\*)|([a-z]*\\s*\\\\+\\s*\\ε)|(\\([a-z]*\\s*\\\\+\\s[a-z]*\\)\\([a-z]*\\s*\\+\\s[a-z]*\\))|([a-z]*\\*)";
@@ -17,8 +18,8 @@ public class Alphabet
     public Alphabet(String input)
     {
         findAlphabet(input);
+        helpers = new Helpers();
     }
-
     /**
      * From https://www.moreofless.co.uk/check-string-contains-number-using-java/
      * @param s input string of either letters or digits
@@ -58,18 +59,26 @@ public class Alphabet
         }
 
         for(String s : acceptedAlphabet){
-            if(s.length() > 0 && !s.equals("n") && !s.equals("d")) {
+            if(s.length() > 0 && !s.equals("n") && !s.equals("d") && !s.equals("*")) {
                 fullAcceptedAlphabet.add(s);
             }
         }
 
-        System.out.println("Alphabet accepted: \n"+fullAcceptedAlphabet);
+//        System.out.println("Alphabet accepted: \n"+fullAcceptedAlphabet);
         alphabet = fullAcceptedAlphabet;
         return fullAcceptedAlphabet;
 
     }
 
+    /**
+     * Getter for the learned alphabet
+     * @return
+     */
     public ArrayList<String> getAlphabet(){return  alphabet;}
 
+    /**
+     * Getter for the regex used against the regex file
+     * @return regex file
+     */
     public String getRegex(){return regex;}
 }

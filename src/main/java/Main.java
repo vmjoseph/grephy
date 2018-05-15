@@ -22,7 +22,7 @@ public class  Main {
 
         DFA dfa = new DFA();
         if(isNFA(rollno)){
-            NFA nfa = new NFA(rollno);
+            NFA nfa = new NFA (rollno);
             Tuple tuple = new Tuple(nfa);
             nfa.setNfaTuple(tuple);
             System.out.println(nfa.nfaTuple);
